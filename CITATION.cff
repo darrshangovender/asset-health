@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "asset-health: offline predictive maintenance for mining assets with event-level evaluation"
+type: software
+license: MIT
+version: 0.1.1
+date-released: 2026-10-14
+authors:
+  - family-names: Govender
+    given-names: Darrshan
+    email: darrshangovender@gmail.com
+repository-code: "https://github.com/darrshangovender/asset-health"
+keywords:
+  - predictive-maintenance
+  - condition-monitoring
+  - remaining-useful-life
+  - anomaly-detection
+  - industrial-iot
+  - mining

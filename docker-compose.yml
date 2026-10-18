@@ -1,0 +1,20 @@
+# Two-step demo on SYNTHETIC data. Output lands in ./out on the host.
+#   docker compose run --rm simulate
+#   docker compose run --rm report      # then open out/report.html
+# On Linux, run as your own user so the bind mount is writable: UID=$(id -u) GID=$(id -g) docker compose ...
+services:
+  simulate:
+    build: .
+    image: asset-health:local
+    user: "${UID:-1000}:${GID:-1000}"
+    command: ["simulate", "--seed", "42", "--out", "/data/demo"]
+    volumes:
+      - ./out:/data
+
+  report:
+    build: .
+    image: asset-health:local
+    user: "${UID:-1000}:${GID:-1000}"
+    command: ["report", "/data/demo", "--out", "/data/report.html"]
+    volumes:
+      - ./out:/data
